@@ -17,3 +17,20 @@ WHEN I click the save button for that time block
 THEN the text for that event is saved in local storage
 WHEN I refresh the page
 THEN the saved events persist
+
+
+-create local stroage
+-set the local time and date
+-se up row and colms for hourly set up
+-append the colms and rows
+-add to container
+-set 12 hour splits
+-update colors to changhe with hours 
+-make savebtn
+
+
+
+
+
+
+
