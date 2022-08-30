@@ -26,7 +26,7 @@ $(document).ready(function(){
     }
 
     function dayTimeAmPm(hours){
-        var ampm = hours >= 12 ? 'Am' : 'Pm';
+        var ampm = hours >= 12 ? 'PM' : 'AM';
        hours = hours % 12;
        hours = hours ? hours : 12;
        return hours + ampm;
