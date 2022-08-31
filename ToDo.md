@@ -29,6 +29,12 @@ THEN the saved events persist
 -make savebtn
 
 
+-make colors fill out
+-make save btn look like a btn
+-save btn causes issues in after savebtn clicked
+
+
+
 
 
 

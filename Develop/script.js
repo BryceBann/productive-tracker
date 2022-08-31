@@ -14,9 +14,9 @@ $(document).ready(function(){
 
         var firstCol = $('<div class="col-sm-2"> <p class="hour"> ' + dayTimeAmPm(i) + '</p>');
 
-        var secondCol = $(`<div class="col-sm-8"> <textarea id=text${i} class="description" placeholder="Add whats going on"></textarea>`);
+        var secondCol = $(`<div class="col-sm-8 past"> <textarea id=text${i} class="description" placeholder="Add whats going on"></textarea>`);
 
-        var thirdCol = $(`<div class="col-sm-2"><button class="saveBtn" id=${i}></button>`);
+        var thirdCol = $(`<div class="col-sm-2"><button class="saveBtn" id=${i}><i class="fas fa-save"></i></button>`)
 
         timeLine.append(firstCol);
         timeLine.append(secondCol);
@@ -41,11 +41,10 @@ $(document).ready(function(){
             $(`#text${i}`).addClass("present");
         }else if(nowTime < $(`#${i}`).data("time")) {
             $(`#text${i}`).addClass("future")
-        }else{
-            $(`#text${i}`).addClass("past")
+        }
         }
       }
-   }
+   
 
    setInterval(function() {
     colorChange();
