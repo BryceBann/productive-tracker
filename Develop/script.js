@@ -41,6 +41,8 @@ $(document).ready(function(){
             $(`#text${i}`).addClass("present");
         }else if(nowTime < $(`#${i}`).data("time")) {
             $(`#text${i}`).addClass("future")
+        }else{
+            $(`#text${i}`).addClass("past")
         }
         }
       }
@@ -53,7 +55,7 @@ $(document).ready(function(){
    var saveBtn = $('.saveBtn');
    saveBtn.on('click', function(){
     let btnClicked = $(this).attr('id');
-    let savedText = $(this).parent().siblings().children('.description').val();
+    let savedText = $(this).parent().siblings('.col-sm-8').children().val();
     localStorage.setItem(btnClicked, savedText);
    });
 });
