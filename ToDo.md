@@ -34,7 +34,7 @@ THEN the saved events persist
 -save btn causes issues in after savebtn clicked
 -todo not displaying
 -rest of time not showing 
--color is removed
+-color is removed after save
 
 
 

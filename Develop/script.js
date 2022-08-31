@@ -14,7 +14,7 @@ $(document).ready(function(){
 
         var firstCol = $('<div class="col-sm-2"> <p class="hour"> ' + dayTimeAmPm(i) + '</p>');
 
-        var secondCol = $(`<div class="col-sm-8"> <textarea id=text${i} class="description" placeholder="Add whats going on"></textarea>`);
+        var secondCol = $(`<div class="col-sm-8" id="whole${i}"> <textarea id=text class="description" placeholder="Add whats going on"></textarea>`);
 
         var thirdCol = $(`<div class="col-sm-2"><button class="saveBtn" id=${i}><i class="fas fa-save"></i></button>`)
 
@@ -38,24 +38,23 @@ $(document).ready(function(){
     var nowTime = new Date().getHours();
     for(var i = 9; i < 18; i++) {
         if($(`#${i}`).data("time") == nowTime){
-            $(`#text${i}`).addClass("present");
+            $(`#whole${i}`).addClass("present");
         }else if(nowTime < $(`#${i}`).data("time")) {
-            $(`#text${i}`).addClass("future")
+            $(`#whole${i}`).addClass("future")
         }else{
-            $(`#text${i}`).addClass("past")
+            $(`#whole${i}`).addClass("past")
         }
         }
       }
-   
 
-   setInterval(function() {
+      setInterval(function() {
     colorChange();
    }, 1000);
 //makes the save btn event save data to the local storage 
    var saveBtn = $('.saveBtn');
    saveBtn.on('click', function(){
     let btnClicked = $(this).attr('id');
-    let savedText = $(this).parent().siblings('.col-sm-8').children().val();
+    let savedText = $(this).parent().siblings().children().val();
     localStorage.setItem(btnClicked, savedText);
    });
 });
