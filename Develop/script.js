@@ -7,7 +7,7 @@
 }
 //adds in the input divs for the work day hours
 $(document).ready(function(){
-    $('#currentDay').text(moment().format("dddd, MMMMM Do, YYYY"));
+    $('#currentDay').text(moment().format("dddd, MMMM Do, YYYY"));
     for(let i = 9; i < 18; i++) {
        
         var timeLine = $(`<div data-time=${i} id='${i}' class="row">`);
