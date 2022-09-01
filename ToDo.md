@@ -29,12 +29,11 @@ THEN the saved events persist
 -make savebtn
 
 
--make colors fill out
 -make save btn look like a btn
 -save btn causes issues in after savebtn clicked
--todo not displaying
--rest of time not showing 
+-todo not displaying after save
 -color is removed after save
+
 
 
 

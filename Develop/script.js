@@ -1,8 +1,9 @@
 //pulls any previously saved data from local storage
     function grabLocalData(key){
     let data = localStorage.getItem(key);
+    console.log(data)
     if(data){
-        $(`#text${key}`).text(value);
+        $(`#text${key}`).text(data);
     }
 }
 //adds in the input divs for the work day hours
@@ -14,7 +15,7 @@ $(document).ready(function(){
 
         var firstCol = $('<div class="col-sm-2"> <p class="hour"> ' + dayTimeAmPm(i) + '</p>');
 
-        var secondCol = $(`<div class="col-sm-8" id="whole${i}"> <textarea id=text class="description" placeholder="Add whats going on"></textarea>`);
+        var secondCol = $(`<div class="col-sm-8" id="whole${i}"> <textarea id=text${i} class="description" placeholder="Add whats going on"></textarea>`);
 
         var thirdCol = $(`<div class="col-sm-2"><button class="saveBtn" id=${i}><i class="fas fa-save"></i></button>`)
 
@@ -54,7 +55,7 @@ $(document).ready(function(){
    var saveBtn = $('.saveBtn');
    saveBtn.on('click', function(){
     let btnClicked = $(this).attr('id');
-    let savedText = $(this).parent().siblings().children().val();
+    let savedText = $(this).parent().siblings().children('.description').val();
     localStorage.setItem(btnClicked, savedText);
    });
 });
